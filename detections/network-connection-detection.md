@@ -1,4 +1,4 @@
-\# Suspicious Network Connection Detection
+##suspicious Network Connection Detection
 
 
 
@@ -65,6 +65,32 @@ Sysmon Event ID 3 will log the network connection, including:
 
 
 \- Source process
+
+
+## Detection Logic
+
+Malware, reverse shells, and command-and-control (C2) frameworks often establish
+outbound network connections from compromised endpoints to attacker-controlled
+servers.
+
+This detection monitors Sysmon network connection events (Event ID 3) to identify
+processes initiating outbound connections from the host.
+
+By analyzing the process name, destination IP address, and destination port,
+SOC analysts can identify suspicious communication patterns such as reverse
+shell connections, unauthorized remote access attempts, or malware beaconing
+activity.
+
+Unusual processes communicating with external systems should be investigated
+further to determine if the activity is legitimate or indicative of compromise.
+
+
+## MITRE ATT&CK Mapping
+
+Technique: T1071 – Application Layer Protocol  
+Tactic: Command and Control
+
+
 
 \- Destination IP
 
