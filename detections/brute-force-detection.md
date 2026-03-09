@@ -60,6 +60,11 @@ a short time window.
 Attackers often attempt multiple password combinations when trying to
 compromise accounts via SMB or RDP authentication.
 
+## MITRE ATT&CK Mapping
+
+Technique: T1110 – Brute Force  
+Tactic: Credential Access
+
 
 
 Windows Security Event ID 4625 will be generated for each failed login attempt.
