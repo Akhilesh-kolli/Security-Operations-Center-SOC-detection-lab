@@ -33,3 +33,14 @@ A hands-on Security Operations Center (SOC) detection lab built using Splunk Ent
 ## Suspicious Network Connection
 
 ![Network Detection](screenshots/network-connection-detection.png)
+
+
+## Skills Demonstrated
+
+• SIEM log analysis using Splunk  
+• Detection engineering and threat hunting  
+• Endpoint telemetry monitoring using Sysmon  
+• Brute force attack detection  
+• Suspicious PowerShell execution detection  
+• Network connection monitoring  
+• Incident investigation workflow
