@@ -51,6 +51,16 @@ smbclient //192.168.0.13/C$ -U administrator%wrongpass
 \## Expected Logs
 
 
+## Detection Logic
+
+This rule identifies potential brute-force attacks by detecting multiple
+failed authentication attempts from the same source IP address within
+a short time window.
+
+Attackers often attempt multiple password combinations when trying to
+compromise accounts via SMB or RDP authentication.
+
+
 
 Windows Security Event ID 4625 will be generated for each failed login attempt.
 
