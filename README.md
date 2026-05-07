@@ -1,40 +1,50 @@
-# Cymarl-Framework
+# SOC Threat Detection & Incident Response Lab
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Cybersecurity-MARL-darkred">
-  <img src="https://img.shields.io/badge/Reinforcement-Learning-blue">
-  <img src="https://img.shields.io/badge/PPO-Training-purple">
-  <img src="https://img.shields.io/badge/Attacker-Defender-orange">
-  <img src="https://img.shields.io/badge/Python-Framework-yellow">
+  <img src="https://img.shields.io/badge/SOC-Threat_Detection-blue">
+  <img src="https://img.shields.io/badge/SIEM-Splunk-green">
+  <img src="https://img.shields.io/badge/Endpoint-Sysmon-brightgreen">
+  <img src="https://img.shields.io/badge/Attack-Simulation-orange">
   <img src="https://img.shields.io/badge/Kali-Linux-red">
-  <img src="https://img.shields.io/badge/Visualization-Matplotlib-green">
-  <img src="https://img.shields.io/badge/Environment-GraphBased-black">
+  <img src="https://img.shields.io/badge/Logs-Windows_Event_Logs-yellow">
+  <img src="https://img.shields.io/badge/Incident-Response-darkblue">
+  <img src="https://img.shields.io/badge/VMware-LabEnvironment-purple">
 </p>
 
 ---
 
-# Cymarl-Framework
+# Project Overview
 
-Cymarl-Framework is a Cybersecurity Multi-Agent Reinforcement Learning (MARL) framework designed for attacker–defender simulations in graph-based cyber environments.
+This project is a SOC (Security Operations Center) Threat Detection and Incident Response Lab developed in a virtualized cybersecurity environment.
 
-The framework models interactions between intelligent attacker and defender agents where both learn adaptive strategies using Proximal Policy Optimization (PPO). The project focuses on cyber attack path traversal, dynamic defense decisions, reward optimization, and reinforcement learning–based cybersecurity experimentation.
+The lab simulates real-world cyber attack scenarios using Kali Linux as the attacker machine and Windows as the target system. Sysmon is used for endpoint telemetry generation, while Splunk is used as the SIEM platform for centralized log monitoring, threat hunting, and incident investigation.
 
-The environment simulates cyber conflict scenarios where attackers attempt to compromise network nodes while defenders attempt to secure critical assets and minimize attack success.
+The primary objective of the project is to analyze attacker behavior, detect malicious activities through security monitoring, and understand SOC workflows used in real-world security operations.
 
 ---
 
-# Core Features
+# Objectives
 
-- Multi-Agent Reinforcement Learning (MARL)
-- PPO-based attacker and defender training
-- Graph-based cyber environment
-- Attack path simulation
-- Dynamic reward engineering
-- Cyber node compromise simulation
-- Defender response mechanisms
-- Training metric visualization
-- GIF-based environment rendering
-- Research-focused cyber experimentation
+- Simulate cyber attacks in a controlled environment
+- Monitor endpoint activity using Sysmon
+- Analyze logs using Splunk SIEM
+- Detect suspicious attacker behavior
+- Perform incident investigation workflows
+- Understand SOC threat detection processes
+- Develop detection queries for malicious activity
+- Analyze attacker tactics and techniques
+
+---
+
+# Lab Environment
+
+| Component | Purpose |
+|---|---|
+| Kali Linux | Attack simulation |
+| Windows VM | Victim machine |
+| Splunk | SIEM platform |
+| Sysmon | Endpoint telemetry |
+| VMware | Virtual lab environment |
 
 ---
 
@@ -42,136 +52,163 @@ The environment simulates cyber conflict scenarios where attackers attempt to co
 
 | Category | Technologies |
 |---|---|
-| Programming Language | Python |
-| RL Algorithm | PPO |
-| Environment Modeling | Graph-based Simulation |
-| Visualization | Matplotlib |
-| Numerical Computing | NumPy |
-| Data Handling | Pandas |
-| Platform | Kali Linux |
+| Operating Systems | Kali Linux, Windows |
+| SIEM Platform | Splunk |
+| Endpoint Monitoring | Sysmon |
+| Virtualization | VMware |
+| Log Analysis | Windows Event Logs |
+| Scripting | Python, PowerShell |
 
 ---
 
-# Framework Workflow
+# Attack Simulations Performed
+
+The following activities were simulated in the lab environment:
+
+- Port scanning
+- Enumeration
+- Reverse shell execution
+- Suspicious PowerShell execution
+- Brute-force login attempts
+- Unauthorized command execution
+- Process monitoring
+- Privilege escalation testing
+
+---
+
+# Detection Workflow
 
 ```text
-Attacker Agent
-       ↓
-Graph-Based Cyber Environment
-       ↓
-Defender Agent
-       ↓
-State Transition & Rewards
-       ↓
-PPO Training Process
-       ↓
-Metrics & Visualization
+Kali Linux Attacker
+          ↓
+Attack Simulation
+          ↓
+Windows Target System
+          ↓
+Sysmon Event Generation
+          ↓
+Windows Event Logs
+          ↓
+Splunk Log Ingestion
+          ↓
+Threat Detection & Analysis
 ```
+
+---
+
+# Sysmon Monitoring
+
+Sysmon was configured to monitor:
+
+- Process creation events
+- Network connections
+- PowerShell activity
+- File creation events
+- Registry modifications
+- Command-line execution
+- Parent-child process relationships
+
+These logs were forwarded to Splunk for centralized monitoring and analysis.
+
+---
+
+# Splunk Analysis
+
+Splunk was used for:
+
+- Security event monitoring
+- Threat hunting
+- Detection query creation
+- Attack timeline analysis
+- Log investigation
+- Suspicious process analysis
+- Incident response investigation
+
+---
+
+# Detection Use Cases
+
+- Detecting PowerShell abuse
+- Monitoring suspicious commands
+- Identifying brute-force activity
+- Tracking reverse shell execution
+- Detecting abnormal network behavior
+- Monitoring unauthorized process execution
 
 ---
 
 # Project Structure
 
 ```text
-Cymarl-Framework/
+SOC-Threat-Detection-Lab/
 │
-├── src/
-├── models/
-├── plots/
-├── gifs/
-├── metrics/
-├── compute_metrics.py
-├── plot_training.py
-├── generate_gif.py
-├── requirements.txt
-└── README.md
+├── screenshots/
+├── reports/
+├── splunk_queries/
+├── sysmon_configs/
+├── attack_simulations/
+├── scripts/
+├── README.md
+└── requirements.txt
 ```
 
 ---
 
-# Installation
+# Installation & Setup
 
-Clone the repository:
+## 1. Configure Virtual Machines
 
-```bash
-git clone https://github.com/Akhilesh-kolli/Cymarl-Framework-.git
-```
+- Create Kali Linux VM
+- Create Windows VM
+- Configure networking between VMs
 
-Move into the project directory:
+## 2. Install Sysmon
 
-```bash
-cd Cymarl-Framework-
-```
+Install Sysmon on the Windows machine using Sysinternals tools.
 
-Install dependencies:
+## 3. Install Splunk
 
-```bash
-pip install -r requirements.txt
-```
+Install Splunk Enterprise or Splunk Free Edition.
 
----
+## 4. Configure Logging
 
-# Running the Framework
+- Enable Windows Event Logging
+- Configure Sysmon event collection
+- Forward logs to Splunk
 
-Run training:
+## 5. Perform Attack Simulation
 
-```bash
-python train.py
-```
+Run controlled attack simulations from Kali Linux.
 
-Generate metrics:
+## 6. Analyze Logs
 
-```bash
-python compute_metrics.py
-```
-
-Plot training graphs:
-
-```bash
-python plot_training.py
-```
-
-Generate environment GIF:
-
-```bash
-python generate_gif.py
-```
+Use Splunk dashboards and search queries to investigate attack activity.
 
 ---
 
-# Generated Outputs
+# Learning Outcomes
 
-The framework generates:
+Through this project:
 
-- PPO training metrics
-- Reward convergence graphs
-- Attack success analysis
-- Defender efficiency metrics
-- Training visualizations
-- Animated cyber environment simulations
-- Graph traversal analysis
-
----
-
-# Research Applications
-
-- Cybersecurity reinforcement learning
-- Autonomous cyber defense research
-- Attacker–defender simulations
-- Graph-based threat modeling
-- Adaptive defense strategy analysis
-- AI-driven cyber experimentation
+- Understood SOC operations workflow
+- Performed SIEM-based monitoring
+- Practiced threat hunting techniques
+- Learned endpoint telemetry analysis
+- Improved incident response understanding
+- Developed attack detection logic
+- Analyzed attacker behavior and techniques
 
 ---
 
 # Future Enhancements
 
-- Multi-defender coordination
-- Advanced adversarial RL algorithms
-- Real-time simulation dashboards
-- Scalable distributed training
-- Explainable AI for cyber decisions
-- Dynamic network topology generation
+- ELK Stack integration
+- Advanced threat correlation
+- Automated alert generation
+- Sigma rule integration
+- Real-time SOC dashboards
+- Network traffic analysis
+- IDS/IPS integration
 
 ---
 
@@ -179,7 +216,7 @@ The framework generates:
 
 ## Akhilesh Kolli
 
-Cybersecurity Research | Reinforcement Learning | Threat Simulation
+Cybersecurity | SOC Analysis | Threat Detection | Incident Response
 
 GitHub:
 https://github.com/Akhilesh-kolli
@@ -188,4 +225,4 @@ https://github.com/Akhilesh-kolli
 
 # License
 
-This project is intended for academic and cybersecurity research purposes.
+This project is intended for educational and cybersecurity research purposes.
